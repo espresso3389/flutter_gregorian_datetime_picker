@@ -1,6 +1,6 @@
 # example
 
-A demo for flutter_datetime_picker
+A demo for flutter_gregorian_datetime_picker
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 # Flutter Datetime Picker
 
-[(Pub) flutter_datetime_picker](https://pub.dev/packages/flutter_datetime_picker)
+[(Pub) flutter_gregorian_datetime_picker](https://pub.dev/packages/flutter_gregorian_datetime_picker)
 
 A flutter date time picker inspired by [flutter-cupertino-date-picker](https://github.com/wuzhendev/flutter-cupertino-date-picker)
 
@@ -62,12 +62,12 @@ TextButton(
     onPressed: () {
         DatePicker.showDatePicker(context,
                               showTitleActions: true,
-                              minTime: DateTime(2018, 3, 5),
-                              maxTime: DateTime(2019, 6, 7), onChanged: (date) {
+                              minTime: LocalDateTime(2018, 3, 5),
+                              maxTime: LocalDateTime(2019, 6, 7), onChanged: (date) {
                             print('change $date');
                           }, onConfirm: (date) {
                             print('confirm $date');
-                          }, currentTime: DateTime.now(), locale: LocaleType.zh);
+                          }, currentTime: LocalDateTime.now(), locale: LocaleType.zh);
     },
     child: Text(
         'show date time picker (Chinese)',
@@ -87,8 +87,8 @@ class CustomPicker extends CommonPickerModel {
     return '$value'.padLeft(length, "0");
   }
 
-  CustomPicker({DateTime currentTime, LocaleType locale}) : super(locale: locale) {
-    this.currentTime = currentTime ?? DateTime.now();
+  CustomPicker({LocalDateTime currentTime, LocaleType locale}) : super(locale: locale) {
+    this.currentTime = currentTime ?? LocalDateTime.now();
     this.setLeftIndex(this.currentTime.hour);
     this.setMiddleIndex(this.currentTime.minute);
     this.setRightIndex(this.currentTime.second);
@@ -137,11 +137,11 @@ class CustomPicker extends CommonPickerModel {
   }
 
   @override
-  DateTime finalTime() {
+  LocalDateTime finalTime() {
     return currentTime.isUtc
-        ? DateTime.utc(currentTime.year, currentTime.month, currentTime.day,
+        ? LocalDateTime.utc(currentTime.year, currentTime.month, currentTime.day,
             this.currentLeftIndex(), this.currentMiddleIndex(), this.currentRightIndex())
-        : DateTime(currentTime.year, currentTime.month, currentTime.day, this.currentLeftIndex(),
+        : LocalDateTime(currentTime.year, currentTime.month, currentTime.day, this.currentLeftIndex(),
             this.currentMiddleIndex(), this.currentRightIndex());
   }
 }

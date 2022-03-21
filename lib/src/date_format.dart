@@ -1,215 +1,216 @@
+import 'gregorian_date_time.dart';
 import 'i18n_model.dart';
 
 /// Outputs year as four digits
 ///
 /// Example:
-///     formatDate(new DateTime(2018,8,31), [ymdw]);
+///     formatDate(new LocalDateTime(2018,8,31), [ymdw]);
 ///     // => Today
 const String ymdw = 'ymdw';
 
 ///
 /// Example:
-///     formatDate(new DateTime(1989), [yyyy]);
+///     formatDate(new LocalDateTime(1989), [yyyy]);
 ///     // => 1989
 const String yyyy = 'yyyy';
 
 /// Outputs year as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989), [yy]);
+///     formatDate(new LocalDateTime(1989), [yy]);
 ///     // => 89
 const String yy = 'yy';
 
 /// Outputs month as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 11), [mm]);
+///     formatDate(new LocalDateTime(1989, 11), [mm]);
 ///     // => 11
-///     formatDate(new DateTime(1989, 5), [mm]);
+///     formatDate(new LocalDateTime(1989, 5), [mm]);
 ///     // => 05
 const String mm = 'mm';
 
 /// Outputs month compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 11), [mm]);
+///     formatDate(new LocalDateTime(1989, 11), [mm]);
 ///     // => 11
-///     formatDate(new DateTime(1989, 5), [m]);
+///     formatDate(new LocalDateTime(1989, 5), [m]);
 ///     // => 5
 const String m = 'm';
 
 /// Outputs month as long name
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2), [MM]);
+///     formatDate(new LocalDateTime(1989, 2), [MM]);
 ///     // => february
 const String MM = 'MM';
 
 /// Outputs month as short name
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2), [M]);
+///     formatDate(new LocalDateTime(1989, 2), [M]);
 ///     // => feb
 const String M = 'M';
 
 /// Outputs day as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2, 21), [dd]);
+///     formatDate(new LocalDateTime(1989, 2, 21), [dd]);
 ///     // => 21
-///     formatDate(new DateTime(1989, 2, 5), [dd]);
+///     formatDate(new LocalDateTime(1989, 2, 5), [dd]);
 ///     // => 05
 const String dd = 'dd';
 
 /// Outputs day compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2, 21), [d]);
+///     formatDate(new LocalDateTime(1989, 2, 21), [d]);
 ///     // => 21
-///     formatDate(new DateTime(1989, 2, 5), [d]);
+///     formatDate(new LocalDateTime(1989, 2, 5), [d]);
 ///     // => 5
 const String d = 'd';
 
 /// Outputs week in month
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2, 21), [w]);
+///     formatDate(new LocalDateTime(1989, 2, 21), [w]);
 ///     // => 4
 const String w = 'w';
 
 /// Outputs week in year as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 12, 31), [W]);
+///     formatDate(new LocalDateTime(1989, 12, 31), [W]);
 ///     // => 53
-///     formatDate(new DateTime(1989, 2, 21), [W]);
+///     formatDate(new LocalDateTime(1989, 2, 21), [W]);
 ///     // => 08
 const String WW = 'WW';
 
 /// Outputs week in year compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2, 21), [W]);
+///     formatDate(new LocalDateTime(1989, 2, 21), [W]);
 ///     // => 8
 const String W = 'W';
 
 /// Outputs week day as long name
 ///
 /// Example:
-///     formatDate(new DateTime(2018, 1, 14), [D]);
+///     formatDate(new LocalDateTime(2018, 1, 14), [D]);
 ///     // => sun
 const String D = 'D';
 
 /// Outputs hour (0 - 11) as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15), [hh]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15), [hh]);
 ///     // => 03
 const String hh = 'hh';
 
 /// Outputs hour (0 - 11) compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15), [h]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15), [h]);
 ///     // => 3
 const String h = 'h';
 
 /// Outputs hour (0 to 23) as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15), [HH]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15), [HH]);
 ///     // => 15
 const String HH = 'HH';
 
 /// Outputs hour (0 to 23) compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 5), [H]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 5), [H]);
 ///     // => 5
 const String H = 'H';
 
 /// Outputs minute as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40), [nn]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40), [nn]);
 ///     // => 40
-///     formatDate(new DateTime(1989, 02, 1, 15, 4), [nn]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 4), [nn]);
 ///     // => 04
 const String nn = 'nn';
 
 /// Outputs minute compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 4), [n]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 4), [n]);
 ///     // => 4
 const String n = 'n';
 
 /// Outputs second as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10), [ss]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10), [ss]);
 ///     // => 10
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 5), [ss]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 5), [ss]);
 ///     // => 05
 const String ss = 'ss';
 
 /// Outputs second compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 5), [s]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 5), [s]);
 ///     // => 5
 const String s = 's';
 
 /// Outputs millisecond as three digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
 ///     // => 999
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
 ///     // => 099
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0), [SS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0), [SS]);
 ///     // => 009
 const String SSS = 'SSS';
 
 /// Outputs millisecond compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
 ///     // => 999
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
 ///     // => 99
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 9), [SS]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 9), [SS]);
 ///     // => 9
 const String S = 'S';
 
 /// Outputs microsecond as three digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 999), [uuu]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 999), [uuu]);
 ///     // => 999
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 99), [uuu]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 99), [uuu]);
 ///     // => 099
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 9), [uuu]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 9), [uuu]);
 ///     // => 009
 const String uuu = 'uuu';
 
 /// Outputs millisecond compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 999), [u]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 999), [u]);
 ///     // => 999
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 99), [u]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 99), [u]);
 ///     // => 99
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0, 9), [u]);
+///     formatDate(new LocalDateTime(1989, 02, 1, 15, 40, 10, 0, 9), [u]);
 ///     // => 9
 const String u = 'u';
 
 /// Outputs if hour is AM or PM
 ///
 /// Example:
-///     print(formatDate(new DateTime(1989, 02, 1, 5), [am]));
+///     print(formatDate(new LocalDateTime(1989, 02, 1, 5), [am]));
 ///     // => AM
-///     print(formatDate(new DateTime(1989, 02, 1, 15), [am]));
+///     print(formatDate(new LocalDateTime(1989, 02, 1, 15), [am]));
 ///     // => PM
 const String am = 'am';
 
@@ -220,12 +221,10 @@ const String am = 'am';
 const String z = 'z';
 const String Z = 'Z';
 
-String formatDate(DateTime date, List<String> formats, LocaleType locale) {
+String formatDate(LocalDateTime date, List<String> formats, LocaleType locale) {
   if (formats.first == ymdw) {
-    final now = DateTime.now();
-    if (date.year == now.year &&
-        date.month == now.month &&
-        date.day == now.day) {
+    final now = LocalDateTime.now();
+    if (date.year == now.year && date.month == now.month && date.day == now.day) {
       //today
       return i18nObjInLocale(locale)['today'] as String;
     } else if (date.year == now.year) {
@@ -283,12 +282,10 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     } else if (format == m) {
       sb.write(date.month);
     } else if (format == MM) {
-      final monthLong =
-          i18nObjInLocaleLookup(locale, 'monthLong', date.month - 1);
+      final monthLong = i18nObjInLocaleLookup(locale, 'monthLong', date.month - 1);
       sb.write(monthLong);
     } else if (format == M) {
-      final monthShort =
-          i18nObjInLocaleLookup(locale, 'monthShort', date.month - 1);
+      final monthShort = i18nObjInLocaleLookup(locale, 'monthShort', date.month - 1);
       sb.write(monthShort);
     } else if (format == dd) {
       sb.write(digits(date.day, 2));
@@ -315,9 +312,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     } else if (format == h) {
       sb.write(date.hour % 12);
     } else if (format == am) {
-      sb.write(date.hour < 12
-          ? i18nObjInLocale(locale)['am']
-          : i18nObjInLocale(locale)['pm']);
+      sb.write(date.hour < 12 ? i18nObjInLocale(locale)['am'] : i18nObjInLocale(locale)['pm']);
     } else if (format == nn) {
       sb.write(digits(date.minute, 2));
     } else if (format == n) {
@@ -362,5 +357,4 @@ String digits(int value, int length) {
   return '$value'.padLeft(length, "0");
 }
 
-int dayInYear(DateTime date) =>
-    date.difference(new DateTime(date.year, 1, 1)).inDays;
+int dayInYear(LocalDateTime date) => date.difference(new LocalDateTime(date.year, 1, 1)).inDays;
